@@ -5,7 +5,7 @@ const MainPage = () => {
   return (
     <VStack p={5}>
       <Text
-        bgGradient="linear(to-l, #7928CA,#FF0080)"
+        bgGradient="linear(to-l, #2C7A7B,#9ccccd)"
         bgClip="text"
         fontSize="6xl"
         fontWeight="extrabold"
