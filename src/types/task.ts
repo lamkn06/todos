@@ -6,5 +6,5 @@ export interface TaskType {
   description?: string;
   status: TaskStatus;
   order: number;
-  createAt: Date;
+  createAt: string;
 }

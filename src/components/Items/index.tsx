@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
-import { selectInProcessTask } from "../../store/task";
+
 import { TaskType } from "../../types/task";
 import { Item } from "./Item";
 
@@ -14,8 +13,8 @@ export const Items = (props: Props) => {
   return (
     <>
       {tasks.map((task) => (
-        <Box mb={"10px"}>
-          <Item {...task} key={task.id} />
+        <Box mb={"10px"} key={task.id}>
+          <Item task={task} />
         </Box>
       ))}
     </>

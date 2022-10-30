@@ -7,6 +7,7 @@ import { reducers } from "./task.reducers";
 
 export interface TaskState {
   tasks: TaskType[];
+  task: TaskType | null;
 }
 
 export const initialState: TaskState = {
@@ -15,7 +16,7 @@ export const initialState: TaskState = {
       id: uuid(),
       name: "base one",
       status: "in-process",
-      createAt: new Date("10-30-2022"),
+      createAt: "10-30-2022",
       description: "dawoidjoaiwjdoiawdioadiowjdoija",
       order: 1,
     },
@@ -23,10 +24,11 @@ export const initialState: TaskState = {
       id: uuid(),
       name: "base two",
       status: "in-process",
-      createAt: new Date("10-30-2022"),
+      createAt: "10-30-2022",
       order: 2,
     },
   ],
+  task: null,
 };
 
 const task = createSlice({
@@ -47,6 +49,6 @@ export const selectDoneTask = (state: ApplicationRootState): TaskType[] => {
   return tasks.filter((task) => task.status === "done");
 };
 
-export const { addTask } = task.actions;
+export const { addTask, selectTask } = task.actions;
 
 export default task.reducer;

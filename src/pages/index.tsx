@@ -23,7 +23,7 @@ const MainPage = () => {
           <Add />
         </Box>
       </VStack>
-      <Container maxW={"1024px"}>
+      <Container maxW={"1024px"} display="flex" justifyContent={"center"}>
         <Grid templateColumns="repeat(2, 1fr)" gap={6}>
           <GridItem>
             <Items tasks={inProcessTasks} />

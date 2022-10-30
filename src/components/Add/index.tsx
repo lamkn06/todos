@@ -1,5 +1,3 @@
-import uuid from "react-uuid";
-
 import { Stack, Input, Button, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -13,11 +11,7 @@ export const Add = () => {
   const handleSubmit = () => {
     dispatch(
       addTask({
-        id: uuid(),
         name: value,
-        status: "in-process",
-        order: 1,
-        createAt: new Date(),
       }),
     );
   };
