@@ -54,8 +54,6 @@ export const Edit = (props: Props) => {
     onClose();
   };
 
-  console.log(isDirty, isValid);
-
   const handleOnClose = () => {
     reset();
     onClose();

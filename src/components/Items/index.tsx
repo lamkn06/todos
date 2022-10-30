@@ -14,7 +14,7 @@ export const Items = (props: Props) => {
   return (
     <>
       {tasks.length === 0 ? (
-        <Box maxW="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
+        <Box w="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
           <Flex
             p="6"
             justifyContent={"center"}
@@ -27,9 +27,9 @@ export const Items = (props: Props) => {
           </Flex>
         </Box>
       ) : (
-        tasks.map((task) => (
+        tasks.map((task, index) => (
           <Box mb={"10px"} key={task.id}>
-            <Item task={task} />
+            <Item task={task} index={index} />
           </Box>
         ))
       )}
