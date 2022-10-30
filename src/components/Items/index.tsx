@@ -14,9 +14,16 @@ export const Items = (props: Props) => {
   return (
     <>
       {tasks.length === 0 ? (
-        <Box w="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
+        <Box
+          w="xs"
+          borderWidth="1px"
+          borderRadius="lg"
+          h={"200px"}
+          overflow="hidden"
+        >
           <Flex
             p="6"
+            h={"100%"}
             justifyContent={"center"}
             alignItems={"center"}
             flexDirection={"column"}

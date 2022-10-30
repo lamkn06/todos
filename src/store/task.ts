@@ -51,6 +51,7 @@ export const selectDoneTask = (state: ApplicationRootState): TaskType[] => {
   return tasks.filter((task) => task.status === "done");
 };
 
-export const { selectTask, addTask, updateTask, deleteTask } = task.actions;
+export const { selectTask, addTask, updateTask, deleteTask, onDropTask } =
+  task.actions;
 
 export default task.reducer;
