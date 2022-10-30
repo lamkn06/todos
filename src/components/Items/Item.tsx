@@ -1,8 +1,8 @@
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
-import { Box, Badge, Text } from "@chakra-ui/react";
+import { Badge, Box, Text } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { selectTask } from "../../store/task";
+import { deleteTask, selectTask } from "../../store/task";
 import { TaskType } from "../../types/task";
 import { Edit } from "../Edit";
 
@@ -24,9 +24,16 @@ export const Item = (props: Props) => {
     [dispatch],
   );
 
+  const handleDelete = useCallback(
+    (id: string) => {
+      dispatch(deleteTask(id));
+    },
+    [dispatch],
+  );
+
   return (
     <>
-      <Box maxW="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Box maxW="400px" borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Badge borderRadius="full" px="2" colorScheme="green">
@@ -48,7 +55,7 @@ export const Item = (props: Props) => {
 
           {description ? (
             <Box>
-              <Text>doiwjdioawjio</Text>
+              <Text>{description}</Text>
             </Box>
           ) : null}
           <Box display="flex" mt="10" alignItems="center">
@@ -56,7 +63,7 @@ export const Item = (props: Props) => {
               color="red.500"
               mr="2"
               cursor={"pointer"}
-              onClick={() => undefined}
+              onClick={() => handleDelete(props.task.id)}
             />
             <EditIcon
               cursor={"pointer"}

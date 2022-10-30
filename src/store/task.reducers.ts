@@ -5,6 +5,7 @@ import { TaskState } from "./task";
 
 export const reducers = {
   selectTask(state: TaskState, action: PayloadAction<TaskType>) {
+    console.log(action.payload);
     state.task = action.payload;
   },
   addTask(
@@ -24,12 +25,15 @@ export const reducers = {
       createAt: new Date().toDateString(),
     });
   },
-  editTask(state: TaskState, action: PayloadAction<TaskType>) {
+  updateTask(state: TaskState, action: PayloadAction<TaskType>) {
     state.tasks = state.tasks.map((task) => {
       if (task.id === action.payload.id) {
         return action.payload;
       }
       return task;
     });
+  },
+  deleteTask(state: TaskState, action: PayloadAction<string>) {
+    state.tasks = state.tasks.filter((task) => task.id !== action.payload);
   },
 };

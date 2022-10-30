@@ -1,41 +1,62 @@
-import { Stack, Input, Button, Textarea } from "@chakra-ui/react";
-import { useState } from "react";
+import { AddIcon } from "@chakra-ui/icons";
+import {
+  Button,
+  FormControl,
+  FormErrorMessage,
+  Input,
+  Stack,
+  Textarea,
+} from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../store/task";
-import { AddIcon } from "@chakra-ui/icons";
 
 export const Add = () => {
   const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
 
-  const [value, setValue] = useState("");
-  const handleSubmit = () => {
-    dispatch(
-      addTask({
-        name: value,
-      }),
-    );
+    formState: { isDirty, isValid, errors },
+  } = useForm<{ name: string; description?: string }>({
+    mode: "onChange",
+  });
+
+  const onSubmit = (payload: { name: string; description?: string }) => {
+    dispatch(addTask(payload));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={5}>
         <Button
           type="submit"
           colorScheme="teal"
           variant="outline"
+          disabled={!isDirty || !isValid}
           rightIcon={<AddIcon />}
         >
           Add new Task
         </Button>
-        <Input
-          mt={5}
-          value={value}
-          variant="outline"
-          type="text"
-          placeholder="Task name..."
-          onChange={(e) => setValue(e.target.value)}
+        <FormControl isInvalid={!!errors.name}>
+          <Input
+            {...register("name", {
+              required: "This is required",
+            })}
+            mt={5}
+            variant="outline"
+            type="text"
+            placeholder="Task name..."
+          />
+          <FormErrorMessage>
+            {errors.name && errors.name.message}
+          </FormErrorMessage>
+        </FormControl>
+
+        <Textarea
+          placeholder="Task description..."
+          {...register("description")}
         />
-        <Textarea placeholder="Here is a sample placeholder" />
       </Stack>
     </form>
   );

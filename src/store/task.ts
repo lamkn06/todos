@@ -14,18 +14,18 @@ export const initialState: TaskState = {
   tasks: [
     {
       id: uuid(),
+      name: "base two",
+      status: "in-process",
+      createAt: "10-30-2022",
+      order: 2,
+    },
+    {
+      id: uuid(),
       name: "base one",
       status: "in-process",
       createAt: "10-30-2022",
       description: "dawoidjoaiwjdoiawdioadiowjdoija",
       order: 1,
-    },
-    {
-      id: uuid(),
-      name: "base two",
-      status: "in-process",
-      createAt: "10-30-2022",
-      order: 2,
     },
   ],
   task: null,
@@ -41,7 +41,9 @@ export const selectInProcessTask = (
   state: ApplicationRootState,
 ): TaskType[] => {
   const { tasks } = state.task;
-  return tasks.filter((task) => task.status === "in-process");
+  return tasks
+    .filter((task) => task.status === "in-process")
+    .sort((a, b) => a.order - b.order);
 };
 
 export const selectDoneTask = (state: ApplicationRootState): TaskType[] => {
@@ -49,6 +51,6 @@ export const selectDoneTask = (state: ApplicationRootState): TaskType[] => {
   return tasks.filter((task) => task.status === "done");
 };
 
-export const { addTask, selectTask } = task.actions;
+export const { selectTask, addTask, updateTask, deleteTask } = task.actions;
 
 export default task.reducer;
