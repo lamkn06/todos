@@ -16,6 +16,8 @@ export const Add = () => {
         id: uuid(),
         name: value,
         status: "in-process",
+        order: 1,
+        createAt: new Date(),
       }),
     );
   };

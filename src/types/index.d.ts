@@ -1,7 +1,5 @@
-import { PositionState } from "../store/position";
-import { UserState } from "../store/user";
+import { TaskState } from "../store/task";
 
 export interface ApplicationRootState {
-  readonly user: UserState;
-  readonly position: PositionState;
+  readonly task: TaskState;
 }
