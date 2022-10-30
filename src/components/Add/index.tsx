@@ -16,13 +16,14 @@ export const Add = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { isDirty, isValid, errors },
   } = useForm<{ name: string; description?: string }>({
     mode: "onChange",
   });
 
   const onSubmit = (payload: { name: string; description?: string }) => {
+    reset();
     dispatch(addTask(payload));
   };
 

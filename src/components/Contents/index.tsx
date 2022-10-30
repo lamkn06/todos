@@ -1,6 +1,12 @@
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import { useCallback } from "react";
-import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import {
+  DragDropContext,
+  Droppable,
+  DroppableProvided,
+  DroppableStateSnapshot,
+  DropResult,
+} from "react-beautiful-dnd";
 import { useDispatch, useSelector } from "react-redux";
 import {
   onDropTask,
@@ -19,10 +25,8 @@ export const Content = () => {
   const dispatch = useDispatch();
   const inProcessTasks = useSelector(selectInProcessTask);
   const doneTasks = useSelector(selectDoneTask);
-
   const handleOnDragEnd = useCallback(
     (result: DropResult) => {
-      console.log(result);
       dispatch(onDropTask(result));
     },
     [dispatch],
@@ -35,14 +39,18 @@ export const Content = () => {
           <Heading size="lg" as="h2" mb={"10px"}>
             In-Process
           </Heading>
-          <Droppable droppableId="droppableInProcess">
-            {(provided: any, snapshot: any) => (
+          <Droppable droppableId="in-process">
+            {(
+              provided: DroppableProvided,
+              snapshot: DroppableStateSnapshot,
+            ) => (
               <Box
                 minH={"200px"}
                 ref={provided.innerRef}
                 style={getListStyle(snapshot.isDraggingOver)}
               >
                 <Items tasks={inProcessTasks} />
+                {provided.placeholder}
               </Box>
             )}
           </Droppable>
@@ -51,14 +59,18 @@ export const Content = () => {
           <Heading size="lg" as="h2" mb={"10px"}>
             Done
           </Heading>
-          <Droppable droppableId="droppableDone">
-            {(provided: any, snapshot: any) => (
+          <Droppable droppableId="done">
+            {(
+              provided: DroppableProvided,
+              snapshot: DroppableStateSnapshot,
+            ) => (
               <Box
                 minH={"200px"}
                 ref={provided.innerRef}
                 style={getListStyle(snapshot.isDraggingOver)}
               >
                 <Items tasks={doneTasks} />
+                {provided.placeholder}
               </Box>
             )}
           </Droppable>

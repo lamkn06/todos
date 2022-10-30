@@ -48,7 +48,9 @@ export const selectInProcessTask = (
 
 export const selectDoneTask = (state: ApplicationRootState): TaskType[] => {
   const { tasks } = state.task;
-  return tasks.filter((task) => task.status === "done");
+  return tasks
+    .filter((task) => task.status === "done")
+    .sort((a, b) => a.order - b.order);
 };
 
 export const { selectTask, addTask, updateTask, deleteTask, onDropTask } =

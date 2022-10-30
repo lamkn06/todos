@@ -1,12 +1,11 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { DropResult } from "react-beautiful-dnd";
 import uuid from "react-uuid";
-import { TaskType } from "../types/task";
+import { TaskStatus, TaskType } from "../types/task";
 import { TaskState } from "./task";
 
 export const reducers = {
   selectTask(state: TaskState, action: PayloadAction<TaskType>) {
-    console.log(action.payload);
     state.task = action.payload;
   },
   addTask(
@@ -39,8 +38,19 @@ export const reducers = {
   },
 
   onDropTask(state: TaskState, action: PayloadAction<DropResult>) {
-    const { draggableId, destination } = action.payload;
+    const { draggableId, destination, source } = action.payload;
     if (!destination) {
+      return;
+    }
+
+    const status = destination.droppableId as TaskStatus;
+    const targetIndex = destination.index;
+    const sourceIndex = source.index;
+
+    if (
+      sourceIndex === targetIndex &&
+      source.droppableId === destination.droppableId
+    ) {
       return;
     }
 
@@ -48,11 +58,36 @@ export const reducers = {
       if (task.id === draggableId) {
         return {
           ...task,
-          status:
-            destination.droppableId === "droppableDone" ? "done" : "in-process",
-          order: !destination ? task.order : destination.index + 1,
+          status: status,
+          order: targetIndex === 0 ? targetIndex + 1 : targetIndex,
         };
       }
+
+      if (
+        task.status === status &&
+        task.id !== draggableId &&
+        targetIndex < sourceIndex &&
+        task.order >= targetIndex
+      ) {
+        return {
+          ...task,
+          order: task.order + 1,
+        };
+      }
+
+      if (
+        task.status === status &&
+        task.id !== draggableId &&
+        targetIndex > sourceIndex &&
+        task.order <= targetIndex
+      ) {
+        console.log("222");
+        return {
+          ...task,
+          order: task.order - 1,
+        };
+      }
+
       return task;
     });
   },

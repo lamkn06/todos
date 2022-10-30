@@ -15,7 +15,7 @@ export const Items = (props: Props) => {
     <>
       {tasks.length === 0 ? (
         <Box
-          w="xs"
+          w="300px"
           borderWidth="1px"
           borderRadius="lg"
           h={"200px"}
@@ -36,7 +36,7 @@ export const Items = (props: Props) => {
       ) : (
         tasks.map((task, index) => (
           <Box mb={"10px"} key={task.id}>
-            <Item task={task} index={index} />
+            <Item task={task} />
           </Box>
         ))
       )}
