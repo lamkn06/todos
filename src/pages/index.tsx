@@ -13,7 +13,7 @@ const MainPage = () => {
             fontSize="6xl"
             fontWeight="extrabold"
           >
-            Todos App
+            Todos Lam Intern
           </Text>
           <Add />
         </Box>
