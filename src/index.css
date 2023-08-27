@@ -17,7 +17,7 @@ code {
 ul#countdown {
   position: relative;
   
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   padding: 15px 0 20px 0;
   color: #fff;
