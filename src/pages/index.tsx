@@ -1,14 +1,17 @@
 import {
   Box,
+  CircularProgress,
+  CircularProgressLabel,
   Container,
+  Grid,
+  GridItem,
+  Heading,
   Img,
   List,
-  ListIcon,
   ListItem,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { RepeatClockIcon } from "@chakra-ui/icons";
 import Countdown from "react-countdown";
 
 const MainPage = () => {
@@ -89,36 +92,139 @@ const MainPage = () => {
             );
           }}
         />
-        <List spacing={3} marginTop={"50px"}>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Lam Intern {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Thang Bui {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Cuong Huynh {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Quan Van {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Quan Pham {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Kim Do {"==>"} on Queue
-          </ListItem>
-          <ListItem>
-            <ListIcon as={RepeatClockIcon} color="red.500" />
-            Bao Vu {"==>"} on Queue
-          </ListItem>
-        </List>
+        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+          <GridItem colSpan={2}>
+            <Heading mb={4}>TP's team</Heading>
+            <List spacing={3} marginTop={"50px"}>
+              <ListItem>
+                <CircularProgress
+                  value={80}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>80%</CircularProgressLabel>
+                </CircularProgress>
+                Lam Intern
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Thang Bui
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={90}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>90%</CircularProgressLabel>
+                </CircularProgress>
+                Cuong Huynh
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Quan Van
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={10}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>10%</CircularProgressLabel>
+                </CircularProgress>
+                Quan Pham
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={5}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>5%</CircularProgressLabel>
+                </CircularProgress>
+                Kim Do
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={90}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>90%</CircularProgressLabel>
+                </CircularProgress>
+                Bao Vu
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={10}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>10%</CircularProgressLabel>
+                </CircularProgress>
+                Vien Pham
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="green.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Linh Nguyen
+              </ListItem>
+            </List>
+          </GridItem>
+          <GridItem colStart={4} colEnd={6} h="10">
+            <Heading mb={4}>DF's team</Heading>
+            <List spacing={3} marginTop={"50px"}>
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="red.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Lam NC
+              </ListItem>
+
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="red.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Thao Nguyen
+              </ListItem>
+              <ListItem>
+                <CircularProgress
+                  value={40}
+                  color="red.400"
+                  marginRight={"15px"}
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+                Cuong Ho
+              </ListItem>
+            </List>
+          </GridItem>
+        </Grid>
       </Container>
     </>
   );
