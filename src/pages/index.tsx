@@ -101,6 +101,9 @@ const MainPage = () => {
             );
           }}
         />
+        <Heading mb={4} color="tomato">
+          The larger the percentage, the easier it is to Gone
+        </Heading>
         <Grid templateColumns="repeat(5, 1fr)" gap={4}>
           <GridItem colSpan={2}>
             <Heading mb={4}>TP's team</Heading>
@@ -117,11 +120,11 @@ const MainPage = () => {
               </ListItem>
               <ListItem>
                 <CircularProgress
-                  value={40}
+                  value={90}
                   color="green.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
+                  <CircularProgressLabel>90%</CircularProgressLabel>
                 </CircularProgress>
                 Thang Bui
               </ListItem>
@@ -137,21 +140,21 @@ const MainPage = () => {
               </ListItem>
               <ListItem>
                 <CircularProgress
-                  value={40}
+                  value={95}
                   color="green.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
+                  <CircularProgressLabel>95%</CircularProgressLabel>
                 </CircularProgress>
                 Quan Van
               </ListItem>
               <ListItem>
                 <CircularProgress
-                  value={10}
+                  value={5}
                   color="green.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>10%</CircularProgressLabel>
+                  <CircularProgressLabel>5%</CircularProgressLabel>
                 </CircularProgress>
                 Quan Pham
               </ListItem>
@@ -177,11 +180,11 @@ const MainPage = () => {
               </ListItem>
               <ListItem>
                 <CircularProgress
-                  value={10}
+                  value={5}
                   color="green.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>10%</CircularProgressLabel>
+                  <CircularProgressLabel>5%</CircularProgressLabel>
                 </CircularProgress>
                 Vien Pham
               </ListItem>
@@ -202,32 +205,32 @@ const MainPage = () => {
             <List spacing={3} marginTop={"50px"}>
               <ListItem>
                 <CircularProgress
-                  value={40}
+                  value={50}
                   color="red.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
+                  <CircularProgressLabel>50%</CircularProgressLabel>
                 </CircularProgress>
                 Lam NC
               </ListItem>
 
               <ListItem>
                 <CircularProgress
-                  value={40}
+                  value={50}
                   color="red.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
+                  <CircularProgressLabel>50%</CircularProgressLabel>
                 </CircularProgress>
                 Thao Nguyen
               </ListItem>
               <ListItem>
                 <CircularProgress
-                  value={40}
+                  value={50}
                   color="red.400"
                   marginRight={"15px"}
                 >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
+                  <CircularProgressLabel>50%</CircularProgressLabel>
                 </CircularProgress>
                 Cuong Ho
               </ListItem>
