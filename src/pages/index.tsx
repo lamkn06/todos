@@ -30,7 +30,7 @@ const MainPage = () => {
         </Box>
       </VStack>
       <Container
-        maxW={"1024px"}
+        maxW={"1280px"}
         display="flex"
         justifyContent={"center"}
         flexDirection={"column"}
@@ -52,7 +52,9 @@ const MainPage = () => {
                         {days}
                       </Text>
                     </div>
-                    <div className="label">Days</div>
+                    <Text fontSize="50px" color="#adafb2">
+                      Days
+                    </Text>
                   </li>
                   <li id="hours">
                     <div className="number">
@@ -63,7 +65,10 @@ const MainPage = () => {
                         {hours}
                       </Text>
                     </div>
-                    <div className="label">Hours</div>
+
+                    <Text fontSize="50px" color="#adafb2">
+                      Hours
+                    </Text>
                   </li>
                   <li id="minutes">
                     <div className="number">
@@ -74,7 +79,9 @@ const MainPage = () => {
                         {minutes}
                       </Text>
                     </div>
-                    <div className="label">Minutes</div>
+                    <Text fontSize="50px" color="#adafb2">
+                      Minutes
+                    </Text>
                   </li>
                   <li id="seconds">
                     <div className="number">
@@ -85,7 +92,9 @@ const MainPage = () => {
                         {seconds}
                       </Text>
                     </div>
-                    <div className="label">Seconds</div>
+                    <Text fontSize="50px" color="#adafb2">
+                      Seconds
+                    </Text>
                   </li>
                 </ul>
               </>
