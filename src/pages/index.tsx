@@ -85,6 +85,11 @@ const MainPage = () => {
       ],
     },
   ];
+
+  const unofficialLayoffDay = "2023-11-30";
+
+  const title = "Risk of Layoff: Lower is better";
+
   return (
     <>
       <VStack p={10}>
@@ -107,7 +112,7 @@ const MainPage = () => {
         alignItems={"center"}
       >
         <Countdown
-          date={new Date("2023-11-30")}
+          date={new Date(unofficialLayoffDay)}
           renderer={(props) => {
             const { days, hours, minutes, seconds } = props;
             return (
@@ -171,8 +176,8 @@ const MainPage = () => {
             );
           }}
         />
-        <Heading mb={4} color="tomato">
-          The larger the percentage, the easier it is to Gone
+        <Heading my={4} color="tomato">
+          {title}
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap={32}>
           {dataflowNFQContractors.map((team) => (
