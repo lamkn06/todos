@@ -14,6 +14,14 @@ import {
 } from "@chakra-ui/react";
 import Countdown from "react-countdown";
 
+function getRiskColor(riskPercentage: number) {
+  const riskColors = ["green", "blue", "yellow", "orange", "red"];
+
+  const riskLevel = Math.ceil((riskPercentage * 5) / 100);
+
+  return `${riskColors.at(riskLevel - 1)}.400`;
+}
+
 const MainPage = () => {
   const dataflowNFQContractors = [
     {
@@ -175,7 +183,7 @@ const MainPage = () => {
                   <ListItem key={`team-member-${member.name}-${i}`}>
                     <CircularProgress
                       value={member.riskPercentage}
-                  color="green.400"
+                      color={getRiskColor(member.riskPercentage)}
                       marginRight={"15px"}
                     >
                       <CircularProgressLabel>
