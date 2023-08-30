@@ -14,7 +14,82 @@ import {
 } from "@chakra-ui/react";
 import Countdown from "react-countdown";
 
+function getRiskColor(riskPercentage: number) {
+  const riskColors = ["green", "blue", "yellow", "orange", "red"];
+
+  const riskLevel = Math.ceil((riskPercentage * 5) / 100);
+
+  return `${riskColors.at(riskLevel - 1)}.400`;
+}
+
 const MainPage = () => {
+  const dataflowNFQContractors = [
+    {
+      name: "True Profile",
+      label: "TP's team",
+      members: [
+        {
+          name: "Lam Intern",
+          riskPercentage: 80,
+        },
+        {
+          name: "Thang Bui",
+          riskPercentage: 90,
+        },
+        {
+          name: "Cuong Huynh",
+          riskPercentage: 90,
+        },
+        {
+          name: "Quan Van",
+          riskPercentage: 95,
+        },
+        {
+          name: "Quan Pham",
+          riskPercentage: 5,
+        },
+        {
+          name: "Kim Do",
+          riskPercentage: 5,
+        },
+        {
+          name: "Bao Vu",
+          riskPercentage: 90,
+        },
+        {
+          name: "Vien Pham",
+          riskPercentage: 5,
+        },
+        {
+          name: "Linh Nguyen",
+          riskPercentage: 40,
+        },
+      ],
+    },
+    {
+      name: "Digiflow",
+      label: "DF's team",
+      members: [
+        {
+          name: "Lam NC",
+          riskPercentage: 50,
+        },
+        {
+          name: "Thao Nguyen",
+          riskPercentage: 50,
+        },
+        {
+          name: "Cuong Ho",
+          riskPercentage: 50,
+        },
+      ],
+    },
+  ];
+
+  const unofficialLayoffDay = "2023-11-30";
+
+  const title = "Risk of Layoff: Lower is better";
+
   return (
     <>
       <VStack p={10}>
@@ -37,7 +112,7 @@ const MainPage = () => {
         alignItems={"center"}
       >
         <Countdown
-          date={new Date("2023-11-30")}
+          date={new Date(unofficialLayoffDay)}
           renderer={(props) => {
             const { days, hours, minutes, seconds } = props;
             return (
@@ -101,141 +176,31 @@ const MainPage = () => {
             );
           }}
         />
-        <Heading mb={4} color="tomato">
-          The larger the percentage, the easier it is to Gone
+        <Heading my={4} color="tomato">
+          {title}
         </Heading>
-        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-          <GridItem colSpan={2}>
-            <Heading mb={4}>TP's team</Heading>
-            <List spacing={3} marginTop={"50px"}>
-              <ListItem>
-                <CircularProgress
-                  value={80}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>80%</CircularProgressLabel>
-                </CircularProgress>
-                Lam Intern
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={90}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>90%</CircularProgressLabel>
-                </CircularProgress>
-                Thang Bui
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={90}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>90%</CircularProgressLabel>
-                </CircularProgress>
-                Cuong Huynh
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={95}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>95%</CircularProgressLabel>
-                </CircularProgress>
-                Quan Van
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={5}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>5%</CircularProgressLabel>
-                </CircularProgress>
-                Quan Pham
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={5}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>5%</CircularProgressLabel>
-                </CircularProgress>
-                Kim Do
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={90}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>90%</CircularProgressLabel>
-                </CircularProgress>
-                Bao Vu
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={5}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>5%</CircularProgressLabel>
-                </CircularProgress>
-                Vien Pham
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={40}
-                  color="green.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>40%</CircularProgressLabel>
-                </CircularProgress>
-                Linh Nguyen
-              </ListItem>
-            </List>
-          </GridItem>
-          <GridItem colStart={4} colEnd={6} h="10">
-            <Heading mb={4}>DF's team</Heading>
-            <List spacing={3} marginTop={"50px"}>
-              <ListItem>
-                <CircularProgress
-                  value={50}
-                  color="red.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>50%</CircularProgressLabel>
-                </CircularProgress>
-                Lam NC
-              </ListItem>
-
-              <ListItem>
-                <CircularProgress
-                  value={50}
-                  color="red.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>50%</CircularProgressLabel>
-                </CircularProgress>
-                Thao Nguyen
-              </ListItem>
-              <ListItem>
-                <CircularProgress
-                  value={50}
-                  color="red.400"
-                  marginRight={"15px"}
-                >
-                  <CircularProgressLabel>50%</CircularProgressLabel>
-                </CircularProgress>
-                Cuong Ho
-              </ListItem>
-            </List>
-          </GridItem>
+        <Grid templateColumns="repeat(2, 1fr)" gap={32}>
+          {dataflowNFQContractors.map((team) => (
+            <GridItem>
+              <Heading mb={4}>{team.label}</Heading>
+              <List spacing={3} marginTop={"50px"}>
+                {team.members.map((member, i) => (
+                  <ListItem key={`team-member-${member.name}-${i}`}>
+                    <CircularProgress
+                      value={member.riskPercentage}
+                      color={getRiskColor(member.riskPercentage)}
+                      marginRight={"15px"}
+                    >
+                      <CircularProgressLabel>
+                        {member.riskPercentage}%
+                      </CircularProgressLabel>
+                    </CircularProgress>
+                    {member.name}
+                  </ListItem>
+                ))}
+              </List>
+            </GridItem>
+          ))}
         </Grid>
       </Container>
     </>
