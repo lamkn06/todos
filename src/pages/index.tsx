@@ -34,7 +34,7 @@ const MainPage = () => {
         },
         {
           name: "Thang Bui",
-          riskPercentage: 90,
+          riskPercentage: 99,
         },
         {
           name: "Cuong Huynh",
@@ -72,21 +72,21 @@ const MainPage = () => {
       members: [
         {
           name: "Lam NC",
-          riskPercentage: 50,
+          riskPercentage: 90,
         },
         {
           name: "Thao Nguyen",
-          riskPercentage: 50,
+          riskPercentage: 90,
         },
         {
           name: "Cuong Ho",
-          riskPercentage: 50,
+          riskPercentage: 90,
         },
       ],
     },
   ];
 
-  const unofficialLayoffDay = "2023-11-30";
+  const unofficialLayoffDay = "2023-10-31";
 
   const title = "Risk of Layoff: Lower is better";
 
