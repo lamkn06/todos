@@ -86,7 +86,7 @@ const MainPage = () => {
     },
   ];
 
-  const unofficialLayoffDay = "2023-10-31";
+  const unofficialLayoffDay = "2023-09-30";
 
   const title = "Risk of Layoff: Lower is better";
 
