@@ -30,7 +30,7 @@ const MainPage = () => {
       members: [
         {
           name: "Lam Intern",
-          riskPercentage: 80,
+          riskPercentage: 99,
         },
         {
           name: "Thang Bui",
@@ -38,7 +38,7 @@ const MainPage = () => {
         },
         {
           name: "Cuong Huynh",
-          riskPercentage: 90,
+          riskPercentage: 99,
         },
         {
           name: "Quan Van",
@@ -54,7 +54,7 @@ const MainPage = () => {
         },
         {
           name: "Bao Vu",
-          riskPercentage: 90,
+          riskPercentage: 70,
         },
         {
           name: "Vien Pham",
@@ -62,7 +62,7 @@ const MainPage = () => {
         },
         {
           name: "Linh Nguyen",
-          riskPercentage: 40,
+          riskPercentage: 90,
         },
       ],
     },
