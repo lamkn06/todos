@@ -80,7 +80,7 @@ const MainPage = () => {
         },
         {
           name: "Cuong Ho",
-          riskPercentage: 100  ,
+          riskPercentage: 100,
         },
       ],
     },
