@@ -30,39 +30,39 @@ const MainPage = () => {
       members: [
         {
           name: "Lam Intern",
-          riskPercentage: 99,
+          riskPercentage: 100,
         },
         {
           name: "Thang Bui",
-          riskPercentage: 99,
+          riskPercentage: 100,
         },
         {
           name: "Cuong Huynh",
-          riskPercentage: 99,
+          riskPercentage: 100,
         },
         {
           name: "Quan Van",
-          riskPercentage: 95,
+          riskPercentage: 100,
         },
         {
           name: "Quan Pham",
-          riskPercentage: 5,
+          riskPercentage: 0,
         },
         {
           name: "Kim Do",
-          riskPercentage: 5,
+          riskPercentage: 0,
         },
         {
           name: "Bao Vu",
-          riskPercentage: 70,
+          riskPercentage: 100,
         },
         {
           name: "Vien Pham",
-          riskPercentage: 5,
+          riskPercentage: 0,
         },
         {
           name: "Linh Nguyen",
-          riskPercentage: 90,
+          riskPercentage: 100,
         },
       ],
     },
@@ -72,21 +72,21 @@ const MainPage = () => {
       members: [
         {
           name: "Lam NC",
-          riskPercentage: 90,
+          riskPercentage: 100,
         },
         {
           name: "Thao Nguyen",
-          riskPercentage: 90,
+          riskPercentage: 100,
         },
         {
           name: "Cuong Ho",
-          riskPercentage: 90,
+          riskPercentage: 100  ,
         },
       ],
     },
   ];
 
-  const unofficialLayoffDay = "2023-09-30";
+  const unofficialLayoffDay = "2023-10-30";
 
   const title = "Risk of Layoff: Lower is better";
 
