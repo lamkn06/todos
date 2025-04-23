@@ -2,12 +2,13 @@ import {
   Box,
   Container,
   Divider,
+  Flex,
   Heading,
   Img,
   Text,
   VStack,
-  keyframes,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import Countdown from "react-countdown";
 
 // Rainbow blinking effect
@@ -36,7 +37,7 @@ const MainPage = () => {
   }));
 
   return (
-    <Box sx={bgBlinkStyle} h="100vh" w="100vw">
+    <Box sx={bgBlinkStyle} minHeight="100vh" w="100vw" overflowX={"hidden"}>
       {/* ❄ Snowflake elements */}
       {snowflakes.map((flake) => (
         <Text
@@ -56,7 +57,7 @@ const MainPage = () => {
         <Box>
           <Img
             src="https://media.licdn.com/dms/image/v2/D5603AQEWlkEgrLbe5w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721887847947?e=1750896000&v=beta&t=sMjGY-mnJP6VA-52yfmSgzYcNUu_gq98zOc634w8v34"
-            width={100}
+            width={200}
             borderRadius="full"
             mx="auto"
           />
@@ -69,13 +70,18 @@ const MainPage = () => {
         justifyContent={"center"}
         flexDirection={"column"}
         alignItems={"center"}
+        boxSizing="border-box"
       >
         <Countdown
           date={new Date(unofficialLayoffDay)}
           renderer={({ days, hours, minutes, seconds }) => (
-            <ul
+            <Flex
+              as="ul"
               id="countdown"
-              style={{ listStyle: "none", display: "flex", gap: "40px" }}
+              w="100%"
+              boxSizing="border-box"
+              justify={["space-between", "flex-start"]}
+              gap={["0", "40px"]}
             >
               <li id="days">
                 <Text
@@ -125,16 +131,16 @@ const MainPage = () => {
                   Seconds
                 </Text>
               </li>
-            </ul>
+            </Flex>
           )}
         />
 
-        <Heading my={4} color="tomato">
+        <Heading my={8} color="tomato">
           Tạm Biệt Bé An
         </Heading>
 
         {/* NFQ Experience Section */}
-        <Box w="full" mt={10}>
+        <Box w="full" paddingBottom={4}>
           <Heading size="lg" mb={4}>
             💌 NFQ Career Timeline
           </Heading>
