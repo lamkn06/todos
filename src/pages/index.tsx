@@ -3,7 +3,6 @@ import {
   Container,
   Divider,
   Heading,
-  Img,
   Text,
   VStack,
   keyframes,
