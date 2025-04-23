@@ -1,94 +1,8 @@
-import {
-  Box,
-  CircularProgress,
-  CircularProgressLabel,
-  Container,
-  Grid,
-  GridItem,
-  Heading,
-  Img,
-  List,
-  ListItem,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Container, Heading, Img, Text, VStack } from "@chakra-ui/react";
 import Countdown from "react-countdown";
 
-function getRiskColor(riskPercentage: number) {
-  const riskColors = ["green", "blue", "yellow", "orange", "red"];
-
-  const riskLevel = Math.ceil((riskPercentage * 5) / 100);
-
-  return `${riskColors.at(riskLevel - 1)}.400`;
-}
-
 const MainPage = () => {
-  const dataflowNFQContractors = [
-    {
-      name: "True Profile",
-      label: "TP's team",
-      members: [
-        {
-          name: "Lam Intern",
-          riskPercentage: 100,
-        },
-        {
-          name: "Thang Bui",
-          riskPercentage: 100,
-        },
-        {
-          name: "Cuong Huynh",
-          riskPercentage: 100,
-        },
-        {
-          name: "Quan Van",
-          riskPercentage: 100,
-        },
-        {
-          name: "Quan Pham",
-          riskPercentage: 0,
-        },
-        {
-          name: "Kim Do",
-          riskPercentage: 0,
-        },
-        {
-          name: "Bao Vu",
-          riskPercentage: 100,
-        },
-        {
-          name: "Vien Pham",
-          riskPercentage: 0,
-        },
-        {
-          name: "Linh Nguyen",
-          riskPercentage: 100,
-        },
-      ],
-    },
-    {
-      name: "Digiflow",
-      label: "DF's team",
-      members: [
-        {
-          name: "Lam NC",
-          riskPercentage: 100,
-        },
-        {
-          name: "Thao Nguyen",
-          riskPercentage: 100,
-        },
-        {
-          name: "Cuong Ho",
-          riskPercentage: 100,
-        },
-      ],
-    },
-  ];
-
-  const unofficialLayoffDay = "2023-10-30";
-
-  const title = "Risk of Layoff: Lower is better";
+  const unofficialLayoffDay = "2025-06-30";
 
   return (
     <>
@@ -97,10 +11,13 @@ const MainPage = () => {
           <Text
             bgGradient="linear(to-r,#00497a,  #00497a)"
             bgClip="text"
-            fontSize="6xl"
+            fontSize="2xl"
             fontWeight="extrabold"
           >
-            <Img src="https://www.trueprofile.io/_next/static/images/logo-blue-fd70ec0ee0aec283e82090abf80048ca.svg" />
+            <Img
+              src="https://media.licdn.com/dms/image/v2/D5603AQEWlkEgrLbe5w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721887847947?e=1750896000&v=beta&t=sMjGY-mnJP6VA-52yfmSgzYcNUu_gq98zOc634w8v34"
+              width={100}
+            />
           </Text>
         </Box>
       </VStack>
@@ -177,31 +94,8 @@ const MainPage = () => {
           }}
         />
         <Heading my={4} color="tomato">
-          {title}
+          Tạm Biệt Bé An
         </Heading>
-        <Grid templateColumns="repeat(2, 1fr)" gap={32}>
-          {dataflowNFQContractors.map((team) => (
-            <GridItem>
-              <Heading mb={4}>{team.label}</Heading>
-              <List spacing={3} marginTop={"50px"}>
-                {team.members.map((member, i) => (
-                  <ListItem key={`team-member-${member.name}-${i}`}>
-                    <CircularProgress
-                      value={member.riskPercentage}
-                      color={getRiskColor(member.riskPercentage)}
-                      marginRight={"15px"}
-                    >
-                      <CircularProgressLabel>
-                        {member.riskPercentage}%
-                      </CircularProgressLabel>
-                    </CircularProgress>
-                    {member.name}
-                  </ListItem>
-                ))}
-              </List>
-            </GridItem>
-          ))}
-        </Grid>
       </Container>
     </>
   );
