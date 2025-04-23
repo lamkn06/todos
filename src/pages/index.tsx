@@ -146,6 +146,13 @@ const MainPage = () => {
           </VStack>
         </Box>
       </Container>
+      <div style={{ visibility: "hidden" }}>
+        <iframe
+          title="SoundCloud Player"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gunk-wah-putra/cinema-sins-background-song&color=%23ff5500&auto_play=true&loop=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
+      </div>
     </Box>
   );
 };
