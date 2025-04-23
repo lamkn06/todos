@@ -3,7 +3,7 @@
     "*.svg": "html"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.tabSize": 2,
   "javascript.preferences.importModuleSpecifier": "relative",
@@ -15,5 +15,5 @@
     "typescript",
     "typescriptreact"
   ],
-  "eslint.format.enable": true,
+  "eslint.format.enable": true
 }

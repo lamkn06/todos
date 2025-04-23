@@ -53,14 +53,7 @@ const MainPage = () => {
       ))}
 
       <VStack p={10}>
-        <Box>
-          <Img
-            src="https://media.licdn.com/dms/image/v2/D5603AQEWlkEgrLbe5w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721887847947?e=1750896000&v=beta&t=sMjGY-mnJP6VA-52yfmSgzYcNUu_gq98zOc634w8v34"
-            width={100}
-            borderRadius="full"
-            mx="auto"
-          />
-        </Box>
+        <Box></Box>
       </VStack>
 
       <Container
@@ -136,33 +129,15 @@ const MainPage = () => {
         {/* NFQ Experience Section */}
         <Box w="full" mt={10}>
           <Heading size="lg" mb={4}>
-            💌 NFQ Career Timeline
+            💌 CHO
           </Heading>
           <VStack spacing={6} align="start" w="full">
             <Box>
-              <Text>🌟 Chief Executive Officer, NFQ Vietnam</Text>
-              <Text fontSize="sm">Aug 2023 – Present · Vietnam · On-site</Text>
-              <Text>
-                Leading 800+ pros across 7 countries. Top-rated tech company in
-                Vietnam (2019–2023).
-              </Text>
+              <Text>🌟 Chief Happiness Officer,</Text>
+              <Text fontSize="sm"></Text>
+              <Text>Wow wow wow</Text>
             </Box>
             <Divider />
-            <Box>
-              <Text>📈 Chief Operating Officer, NFQ Asia</Text>
-              <Text fontSize="sm">Nov 2020 – Aug 2023</Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text>😊 Chief Happiness Officer, NFQ Asia</Text>
-              <Text fontSize="sm">Feb 2018 – Nov 2020</Text>
-              <Text>Built a culture of brilliance & tech growth.</Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text>🛠️ Project Manager, NFQ Asia</Text>
-              <Text fontSize="sm">Nov 2016 – Jan 2018</Text>
-            </Box>
           </VStack>
         </Box>
       </Container>
